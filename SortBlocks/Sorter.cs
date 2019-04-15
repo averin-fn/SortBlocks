@@ -55,7 +55,7 @@ namespace SortBlocks
                 }
                 catch (InvalidOperationException ex)
                 {
-                    throw new InvalidOperationException($"some blocks has the same members as {sortBlocks.First().From}", ex);
+                    throw new InvalidOperationException($"some blocks has the same members", ex);
                 }
             }
 
