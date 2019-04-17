@@ -13,7 +13,7 @@ namespace SortBlocks
                 throw new NullReferenceException("collection is null");
             }
 
-            if(blocks.Count == 0)
+            if(blocks.Count <= 1)
             {
                 return blocks;
             }
