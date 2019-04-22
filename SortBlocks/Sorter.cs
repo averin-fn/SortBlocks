@@ -6,7 +6,7 @@ namespace SortBlocks
 {
     public static class Sorter
     {
-        public static ICollection<Block> Sort(ICollection<Block> blocks)
+        public static ICollection<Block> Sort(this ICollection<Block> blocks)
         {
             if(blocks == null)
             {
