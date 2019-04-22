@@ -6,11 +6,11 @@ namespace SortBlocks
 {
     public static class Sorter
     {
-        public static List<Block> Sort(List<Block> blocks)
+        public static ICollection<Block> Sort(ICollection<Block> blocks)
         {
             if(blocks == null)
             {
-                throw new NullReferenceException("collection is null");
+                throw new ArgumentNullException("collection is null");
             }
 
             if(blocks.Count <= 1)

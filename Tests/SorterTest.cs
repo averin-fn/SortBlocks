@@ -1,6 +1,7 @@
 ﻿using SortBlocks;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Tests
@@ -17,7 +18,7 @@ namespace Tests
                 new Block("Печатники", "Текстильщики")
             };
 
-            var sortBlocks = Sorter.Sort(unsortBlocks);
+            var sortBlocks = Sorter.Sort(unsortBlocks).ToList();
 
             for (int i = 0; i < sortBlocks.Count; i++)
             {
@@ -40,7 +41,7 @@ namespace Tests
                 new Block("Нижегородский", "Южнопортовый"),
             };
 
-            var sortBlocks = Sorter.Sort(unsortBlocks);
+            var sortBlocks = Sorter.Sort(unsortBlocks).ToList();
 
             for (int i = 0; i < sortBlocks.Count; i++)
             {
@@ -104,7 +105,7 @@ namespace Tests
         public void Null_Blocks_Collection()
         {
             List<Block> unsortBlocks = null;
-            var exType = typeof(NullReferenceException);
+            var exType = typeof(ArgumentNullException);
 
             Assert.Throws(exType, () => Sorter.Sort(unsortBlocks));
         }
